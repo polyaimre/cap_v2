@@ -1,2 +1,2 @@
 
-using from './interaction_terams/annotations';
+using from './interaction_teams/annotations';

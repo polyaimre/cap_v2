@@ -1,7 +1,7 @@
 {
   "_version": "1.59.0",
   "sap.app": {
-    "id": "interactionterams",
+    "id": "interactionteams",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -61,7 +61,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "interactionterams.i18n.i18n"
+          "bundleName": "interactionteams.i18n.i18n"
         }
       },
       "": {

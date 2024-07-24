@@ -8,7 +8,7 @@ sap.ui.define(['sap/fe/test/ObjectPage'], function(ObjectPage) {
 
     return new ObjectPage(
         {
-            appId: 'interactionterams',
+            appId: 'interactionteams',
             componentId: 'TeamsObjectPage',
             contextPath: '/Groups/teams'
         },

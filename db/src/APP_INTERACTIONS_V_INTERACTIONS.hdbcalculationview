@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="APP_INTERACTIONS_V_INTERACTIONS" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="APP_INTERACTIONS_V_INTERACTIONS"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="APP_INTERACTIONS_GROUPS">
+    <resourceUri>APP_INTERACTIONS_GROUPS</resourceUri>
+  </DataSource>
+  <DataSource id="APP_INTERACTIONS_TEAMS">
+    <resourceUri>APP_INTERACTIONS_TEAMS</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="ID"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute id="LAST_UPDATE"/>
+      <viewAttribute id="COUNTRY_CODE_CODE"/>
+      <viewAttribute id="NAME_TEAM"/>
+      <viewAttribute id="MATCH_PLAYED" aggregationType="sum"/>
+      <viewAttribute id="WIN" aggregationType="sum"/>
+      <viewAttribute id="DRAW" aggregationType="sum"/>
+      <viewAttribute id="LOOSE" aggregationType="sum"/>
+      <viewAttribute id="SCORE" aggregationType="sum"/>
+      <viewAttribute hidden="true" id="JOIN$ID$GROUP_ID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="APP_INTERACTIONS_GROUPS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID" source="ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAST_UPDATE" source="LAST_UPDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ID$GROUP_ID" source="ID"/>
+    </input>
+    <input node="APP_INTERACTIONS_TEAMS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRY_CODE_CODE" source="COUNTRY_CODE_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME_TEAM" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATCH_PLAYED" source="MATCH_PLAYED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WIN" source="WIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DRAW" source="DRAW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOOSE" source="LOOSE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCORE" source="SCORE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ID$GROUP_ID" source="GROUP_ID"/>
+    </input>
+    <joinAttribute name="JOIN$ID$GROUP_ID"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ID"/>
+      <keyMapping columnObjectName="Join_1" columnName="ID"/>
+    </attribute>
+    <attribute id="NAME" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME"/>
+      <keyMapping columnObjectName="Join_1" columnName="NAME"/>
+    </attribute>
+    <attribute id="LAST_UPDATE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LAST_UPDATE"/>
+      <keyMapping columnObjectName="Join_1" columnName="LAST_UPDATE"/>
+    </attribute>
+    <attribute id="COUNTRY_CODE_CODE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COUNTRY_CODE_CODE"/>
+      <keyMapping columnObjectName="Join_1" columnName="COUNTRY_CODE_CODE"/>
+    </attribute>
+    <attribute id="NAME_TEAM" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME_1"/>
+      <keyMapping columnObjectName="Join_1" columnName="NAME_TEAM"/>
+    </attribute>
+  
+    <attribute id="MATCH_PLAYED" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATCH_PLAYED"/>
+  
+      <keyMapping columnObjectName="Join_1" columnName="MATCH_PLAYED"/>
+  
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="WIN" order="7" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WIN"/>
+      <measureMapping columnObjectName="Join_1" columnName="WIN"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="DRAW" order="8" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="DRAW"/>
+      <measureMapping columnObjectName="Join_1" columnName="DRAW"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="LOOSE" order="9" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LOOSE"/>
+      <measureMapping columnObjectName="Join_1" columnName="LOOSE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="SCORE" order="10" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SCORE"/>
+      <measureMapping columnObjectName="Join_1" columnName="SCORE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="106" y="234"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="APP_INTERACTIONS_GROUPS" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="244"/>
+    </shape>
+    <shape modelObjectName="APP_INTERACTIONS_TEAMS" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="234"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

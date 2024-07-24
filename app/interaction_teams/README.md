@@ -8,7 +8,7 @@
 |**Template Used**<br>Worklist Page V4|
 |**Service Type**<br>Local Cap|
 |**Service URL**<br>http://localhost:4004/odata/v4/catalog/
-|**Module Name**<br>interaction_terams|
+|**Module Name**<br>interaction_teams|
 |**Application Title**<br>Euro 2024|
 |**Namespace**<br>|
 |**UI5 Theme**<br>sap_horizon|
@@ -19,7 +19,7 @@
 |**Main Entity**<br>Groups|
 |**Navigation Entity**<br>teams|
 
-## interaction_terams
+## interaction_teams
 
 An SAP Fiori application.
 
@@ -27,7 +27,7 @@ An SAP Fiori application.
 
 -   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  In order to launch the generated app, simply start your CAP project and navigate to the following location in your browser:
 
-http://localhost:4004/interaction_terams/webapp/index.html
+http://localhost:4004/interaction_teams/webapp/index.html
 
 #### Pre-requisites:
 

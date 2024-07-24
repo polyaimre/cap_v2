@@ -1,30 +1,42 @@
 {
-  "xsappname": "myhanaapp",
-  "tenant-mode": "dedicated",
-  "scopes": [
-      {
-          "name": "$XSAPPNAME.Admin",
-          "description": "Admin"
-      }
-  ],
-  "attributes": [],
-  "role-templates": [
-      {
-          "name": "Admin",
-          "description": "generated",
-          "scope-references": [
-              "$XSAPPNAME.Admin"
-          ],
-          "attribute-references": []
-      }
-  ],
-  "oauth2-configuration": {
-      "credential-types": [
-          "binding-secret",
-          "x509"
-      ],
-      "redirect-uris": [
-          "https://*.applicationstudio.cloud.sap/**"
-      ]
-  }
-  }
+    "xsappname": "myhanaapp2",
+    "tenant-mode": "dedicated",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.authentitaced-user",
+            "description": "authentitaced-user"
+        },
+        {
+            "name": "$XSAPPNAME.Admin",
+            "description": "Admin"
+        }
+    ],
+    "attributes": [],
+    "role-templates": [
+        {
+            "name": "authentitaced-user",
+            "description": "generated",
+            "scope-references": [
+                "$XSAPPNAME.authentitaced-user"
+            ],
+            "attribute-references": []
+        },
+        {
+            "name": "Admin",
+            "description": "generated",
+            "scope-references": [
+                "$XSAPPNAME.Admin"
+            ],
+            "attribute-references": []
+        }
+    ],
+    "oauth2-configuration": {
+        "credential-types": [
+            "binding-secret",
+            "x509"
+        ],
+        "redirect-uris": [
+            "https://*.applicationstudio.cloud.sap/**"
+        ]
+    }
+}

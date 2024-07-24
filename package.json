@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-interaction_terams": "cds watch --open interaction_terams/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-interaction_teams": "cds watch --open interaction_teams/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
@@ -29,6 +29,6 @@
     }
   },
   "sapux": [
-    "app/interaction_terams"
+    "app/interaction_teams"
   ]
 }

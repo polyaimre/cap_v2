@@ -1,4 +1,5 @@
-using CatalogService as service from '../../srv/interaction_srv';
+namespace app.interactions;
+using {app.interactions as service} from '../../srv/interaction_srv';
 annotate service.Groups with @(
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',
